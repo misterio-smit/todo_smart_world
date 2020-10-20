@@ -30,6 +30,7 @@ dependencies {
     // https://mvnrepository.com/artifact/org.hibernate/hibernate-gradle-plugin
     compile group: 'org.hibernate', name: 'hibernate-gradle-plugin', version: '5.4.22.Final'
 
+
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}

@@ -9,19 +9,29 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
+// TODO(Шайдуко): нужен Java-doc на класс и методы
 @RestController
-@RequestMapping("messages")
+@RequestMapping("messages")// TODO(Шайдуко): почему messages? Вы же вроде опреритуете словом TodoList
 public class TodoListController {
+
     private final TodoListRepo todoListRepo;
+    // TODO(Шайдуко): Действия с репозиторием нужно вынести в отдельный сервис, подцепленный через интерфейс
+    //  это нужно для того чтоб мы всегда реализацию работы с дынными могли подменить - сейчас данные лежат в postrgeSQL
+    //  а мы захотим чтоб они лежали в памяти
 
     @Autowired
     public TodoListController(TodoListRepo todoListRepo) {
         this.todoListRepo = todoListRepo;
     }
 
+    // TODO(Шайдуко): методы rest-контроллеров не дожны получать/возвращать сущности (а EntityTodo и ListEntityTodo
+    //  это как раз сущности), и вообще контроллеры не должны ничего знать о сущностях
+    //  для этого есть другие пути - например DTO
+
     @GetMapping
     public List<ListEntityTodo> list(){
         return todoListRepo.findAll();
+        // TODO(Шайдуко): филтрация, сортировка, пагинация
     }
 
     @GetMapping("{id}")

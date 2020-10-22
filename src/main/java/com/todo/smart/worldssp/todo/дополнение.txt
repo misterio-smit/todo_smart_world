@@ -1,0 +1,9 @@
+ещё нужно добавить исключения
+
+DTO (Data Transfer Object) наследуёте от Serializable
+
+так же нужно прикрутить swagger чтоб было описание и отладка методов
+пример https://www.youtube.com/watch?v=xeV74sDVRgo&ab_channel=KPKumar
+
+при использовании аннотаций swagger (например @ApiOperation @ApiResponses использовать русские описания)
+

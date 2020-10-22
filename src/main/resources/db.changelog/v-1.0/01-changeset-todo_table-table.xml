@@ -21,6 +21,16 @@
                      stripComments="true"
                      path="01-drop-todo_table-table.sql"/>
         </rollback>
+
+<!--
+    TODO(Шайдуко): вместо конструкций с SQL-файлами лучше использовать
+    <createTable tableName="имя таблицы">
+        ...
+    </createTable>
+
+    и для create_date change_date использовать дату со временем
+-->
+
     </changeSet>
 
 </databaseChangeLog>

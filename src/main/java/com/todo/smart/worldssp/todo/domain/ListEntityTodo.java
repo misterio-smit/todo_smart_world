@@ -6,10 +6,10 @@ import lombok.Data;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
+// TODO(Шайдуко): нужен Java-doc на класс и методы
 @Entity
 @Table(name = "todo_list_table")
 @Data
-
 public class ListEntityTodo {
 
     public ListEntityTodo() {
@@ -25,6 +25,8 @@ public class ListEntityTodo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    // TODO(Шайдуко) Идентификатор должен быть UUID
+
     @Column(nullable = false)
     private String name;
     //@ManyToOne
